@@ -117,7 +117,7 @@
 										},
 										{
 											"key": "password",
-											"value": "długieHasło!1",
+											"value": "długieHasło!33",
 											"type": "default"
 										}
 									]
@@ -148,12 +148,12 @@
 							"formdata": [
 								{
 									"key": "login",
-									"value": "Owsiej3",
+									"value": "nowyuzytkownik",
 									"type": "default"
 								},
 								{
 									"key": "password",
-									"value": "długieHasło!1",
+									"value": "dasDS@!@da3",
 									"type": "default"
 								}
 							]
