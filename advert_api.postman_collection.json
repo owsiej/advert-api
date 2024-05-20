@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "7c3522d2-cf15-4215-a579-2c11d8fe8007",
+		"name": "advert_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "datetime",
+			"item": [
+				{
+					"name": "Get current datetime",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/heartbeat",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"heartbeat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login user1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "login",
+											"value": "Owsiej",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "dlugieHaslo!11",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}:{{port}}/user/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login user2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "login",
+											"value": "Owsiej2",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "dlugieHaslo!22",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}:{{port}}/user/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login user3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "login",
+											"value": "Owsiej3",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "długieHasło!1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}:{{port}}/user/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "login",
+									"value": "Owsiej3",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "długieHasło!1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/user/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "advertisements",
+			"item": [
+				{
+					"name": "Get all advertisements",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/advertisement",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"advertisement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all advertisements with query",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/advertisement?category=motoryzacja",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"advertisement"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "samochod",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "volvo",
+									"disabled": true
+								},
+								{
+									"key": "author",
+									"value": "wojtek",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "motoryzacja"
+								},
+								{
+									"key": "tags",
+									"value": "samochód",
+									"disabled": true
+								},
+								{
+									"key": "priceGte",
+									"value": "400",
+									"disabled": true
+								},
+								{
+									"key": "priceLte",
+									"value": "400",
+									"disabled": true
+								},
+								{
+									"key": "createdAfter",
+									"value": "2024-05-16",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get advertisement by id json",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/advertisement/664744bd864a6a8540606d85",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"advertisement",
+								"664744bd864a6a8540606d85"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get advertisement by id text",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/advertisement/664744bd864a6a8540606d85",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"advertisement",
+								"664744bd864a6a8540606d85"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get advertisement by id html",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/html",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/advertisement/664744bd864a6a8540606d85",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"advertisement",
+								"664744bd864a6a8540606d85"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/dasdasd",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dasdasd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new advertisement",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "spr maszynę rolniczą",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "John Deere diesel",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Mateusz",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "motoryzacja",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "rolnictwo,ciągnik",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "400000",
+									"type": "text"
+								},
+								{
+									"key": "paidPeriodInWeeks",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/advertisement/add",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"advertisement",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update advertisement by id",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "sprzedam samocho",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Seat 1.9 TDI",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "author",
+									"value": "Asia",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "lalal",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "malarstwo,obraz",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "999999",
+									"type": "text"
+								},
+								{
+									"key": "paidPeriodInWeeks",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/advertisement/664b3a32ac185f69f39643a0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"advertisement",
+								"664b3a32ac185f69f39643a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete advertisement by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/advertisement/664b3a32ac185f69f39643a0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"advertisement",
+								"664b3a32ac185f69f39643a0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
